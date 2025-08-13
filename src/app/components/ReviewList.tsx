@@ -30,42 +30,13 @@ export default function ReviewList({ list }: { list: Review[] }) {
                             <p className="text-xl font-bold">{review.name}</p>
                             <div className="flex justify-between">
                                 <p className="text-xs font-medium uppercase tracking-wider text-gray-300">{review.date}</p>
-                                <h2 className="text-xs font-medium uppercase tracking-wider text-gray-300">{review.score}</h2>
+                                <h1 className="text-2xl uppercase tracking-wider text-gray-300 font-bold">{review.score}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div className="flex max-w-2xl overflow-hidden rounded-lg bg-white font-sans shadow-md mt-3">
-                    <div className="w-1/2">
-                        <img
-                            src={review.image}
-                            alt=""
-                            className="h-full w-full object-cover"
-                        />
-                    </div>
-                    <div className="flex w-1/2 flex-col justify-center p-6">
-                        <p className="text-2xl font-bold text-gray-900">{review.name}</p>
-                        <p className="text-sm text-gray-500">{review.date}</p>
-                        <div className="my-3 flex">
-                            <svg className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-                            <svg className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-                            <svg className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-                            <svg className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-                            <svg className="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="..." /></svg>
-                        </div>
-                        <div className='flex justify-between'>
-                            <p className="text-gray-700">
-                                {review.opinion}
-                            </p>
-                            <h1>{review.score}</h1>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         ))
-
 
     )
 }
