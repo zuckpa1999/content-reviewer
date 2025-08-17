@@ -14,26 +14,35 @@ export default function Home() {
   };
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <>
-        <button onClick={() => setShowModal(true)}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Add a review
+    <div className="font-sans flex flex-col items-center justify-items-center min-h-screen">
+      <h1 className="mb-5 font-bold font-size text-3xl">NavBar</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        {reviews.length > 0 ?
+          <ReviewList list={reviews} /> :
+          <h1>No review yet</h1>
+        }
+      </div>
+      <div className="fixed bottom-0 h-20 right-7">
+
+        <button className=" inline-flex h-10 w-10 items-center 
+        justify-center rounded-full bg-gray-50 text-black drop-shadow-sm transition-colors duration-150 hover:bg-gray-200"
+          onClick={() => setShowModal(true)}>
+          <svg className="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+          </svg>
+
         </button>
 
+      </div>
 
-        {reviews.length > 0 &&
-          <ReviewList list={reviews} />
-        }
+      {showModal && <ReviewModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSubmit={handleSaveReview}
+        initialData={null} // or pass existing review for editing
+      />}
 
-        {showModal && <ReviewModal
-          isOpen={showModal}
-          onClose={() => setShowModal(false)}
-          onSubmit={handleSaveReview}
-          initialData={null} // or pass existing review for editing
-        />}
 
-      </>
     </div>
   );
 }

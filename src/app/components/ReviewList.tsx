@@ -7,7 +7,7 @@ export default function ReviewList({ list }: { list: Review[] }) {
 
         list.map((review) => (
             <div key={review.id}>
-                <div className="relative max-w-md overflow-hidden rounded-2xl font-sans text-white shadow-2xl">
+                <div className="relative max-w-sm min-w-sm overflow-hidden rounded-2xl font-sans text-white shadow-2xl mt-2">
                     <img
                         src={review.image}
                         alt=""
