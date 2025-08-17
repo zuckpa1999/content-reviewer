@@ -8,17 +8,35 @@ export default function Home() {
 
   const [showModal, setShowModal] = useState<boolean>(false);
   const [reviews, setReviews] = useState<Review[]>([]);
+  const [editingReview, setEditingReview] = useState<Review | null>(null);
+
+
+  const handleEditReview = (review: Review) => {
+    setEditingReview(review);
+    setShowModal(true);
+  };
+
+  const handleAddReview = () => {
+    setEditingReview(null);
+    setShowModal(true);
+  }
 
   const handleSaveReview = (reviewData: Review) => {
-    setReviews(prev => [reviewData, ...prev]);
-  };
+    if (editingReview)
+      setReviews(prev => prev.map(r => r.id === reviewData.id ? reviewData : r));
+    else
+      setReviews(prev => [...prev, reviewData]);
+
+    setShowModal(false);
+    setEditingReview(null);
+  }
 
   return (
     <div className="font-sans flex flex-col items-center justify-items-center min-h-screen">
       <h1 className="mb-5 font-bold font-size text-3xl">NavBar</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {reviews.length > 0 ?
-          <ReviewList list={reviews} /> :
+          <ReviewList list={reviews} onEdit={handleEditReview} /> :
           <h1>No review yet</h1>
         }
       </div>
@@ -39,7 +57,7 @@ export default function Home() {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         onSubmit={handleSaveReview}
-        initialData={null} // or pass existing review for editing
+        initialData={editingReview}
       />}
 
 
