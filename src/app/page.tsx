@@ -35,7 +35,7 @@ export default function Home() {
     <div className="font-sans">
       <nav className="font-sans flex flex-col text-center py-4 px-6 bg-white shadow w-full">
         <div className="flex justify-center items-center">
-          <img src="/film-icon.png" style={{ width: "60px" }} alt="logo" />
+          <img src="/film-icon.png" style={{ width: "51px" }} alt="logo" />
         </div>
 
       </nav>

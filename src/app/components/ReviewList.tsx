@@ -11,7 +11,8 @@ export default function ReviewList({ list, onEdit }: ReviewListProps) {
 
         list.map((review) => (
             <div key={review.id} onClick={() => onEdit(review)}>
-                <div className="relative max-w-sm min-w-sm overflow-hidden rounded-2xl font-sans text-white shadow-2xl mt-2">
+                <div className="relative max-w-sm min-w-sm overflow-hidden rounded-2xl font-sans text-white shadow-sm mt-2  cursor-pointer
+                 hover:shadow-md">
                     <img
                         src={review.image}
                         alt=""
