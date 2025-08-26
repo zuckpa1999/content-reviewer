@@ -86,12 +86,12 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
 
         // Validation
         if (!formData.name.trim()) {
-            alert('Please enter the name of the content');
+            alert('Please insert the name of the content');
             return;
         }
 
         if (!formData.opinion.trim()) {
-            alert('Please enter your opinion');
+            alert('Please insert your opinion');
             return;
         }
 

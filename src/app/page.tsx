@@ -32,7 +32,7 @@ export default function Home() {
   }
 
   return (
-    <div className="font-sans flex flex-col items-center justify-items-center min-h-screen">
+    <div className="font-sans flex flex-col items-center justify-items-center ">
       <h1 className="mb-5 font-bold font-size text-3xl">NavBar</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {reviews.length > 0 ?
@@ -46,7 +46,7 @@ export default function Home() {
         justify-center rounded-full bg-gray-50 text-black drop-shadow-sm transition-colors duration-150 hover:bg-gray-200"
           onClick={() => handleAddReview()}>
           <svg className="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+            <path stroke="currentColor" strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
           </svg>
 
         </button>
