@@ -39,7 +39,7 @@ Todo
 [] review code
 [] review next.js doc
 [] plan testing strategies - optional
-[] view mode
+[done] view mode
 [] how to store data
 [] authen/authorization
 [] deployment strategies

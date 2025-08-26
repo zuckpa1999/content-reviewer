@@ -3,12 +3,12 @@ import { ReviewModalProps, FormData, Review } from '../types';
 
 
 
-const ReviewModal: React.FC<ReviewModalProps> = ({
+export default function ReviewModal({
     isOpen,
     onClose,
     onSubmit,
     initialData = null
-}) => {
+}: ReviewModalProps) {
     const [formData, setFormData] = useState<FormData>({
         id: null,
         image: null,
@@ -94,6 +94,8 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
             alert('Please insert your opinion');
             return;
         }
+
+        // handle duplicate names if needed
 
         // Prepare data for submission
         const reviewData: Review = {
@@ -304,5 +306,3 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
         </div>
     );
 };
-
-export default ReviewModal;
