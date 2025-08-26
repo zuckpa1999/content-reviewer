@@ -10,7 +10,7 @@ export default function ReviewList({ list, onEdit }: ReviewListProps) {
     return (
 
         list.map((review) => (
-            <div key={review.id}>
+            <div key={review.id} onClick={() => onEdit(review)}>
                 <div className="relative max-w-sm min-w-sm overflow-hidden rounded-2xl font-sans text-white shadow-2xl mt-2">
                     <img
                         src={review.image}
@@ -34,7 +34,6 @@ export default function ReviewList({ list, onEdit }: ReviewListProps) {
                             <p className="text-xl font-bold">{review.name}</p>
                             <div className="flex justify-between">
                                 <p className="text-xs font-medium uppercase tracking-wider text-gray-300">{review.date}</p>
-                                <button onClick={() => onEdit(review)}>edit</button>
                                 <h1 className="text-2xl uppercase tracking-wider text-gray-300 font-bold">{review.score}</h1>
                             </div>
                         </div>
